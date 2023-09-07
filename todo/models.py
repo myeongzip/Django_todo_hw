@@ -14,3 +14,5 @@ class Todo(models.Model):
     is_done = models.BooleanField()
     image = models.ImageField(upload_to='images/')
     
+    def __str__(self) -> str:
+        return self.content

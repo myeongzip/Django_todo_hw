@@ -2,13 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def create(request):
+def todo_create(request):
     pass    
-def read(request):
+def todo_read(request):
     pass
     
-def update(request):
+def todo_update(request):
     pass
-def delete(request):
+def todo_delete(request):
     pass
     

@@ -5,8 +5,8 @@ from todo import views
 
 
 urlpatterns = [
-    path('create/', views.create),
-    path('read/', views.read),
-    path('update/', views.update),
-    path('delete/', views.delete),
+    path('create/', views.todo_create),
+    path('read/', views.todo_read),
+    path('update/', views.todo_update),
+    path('delete/', views.todo_delete),
 ]
