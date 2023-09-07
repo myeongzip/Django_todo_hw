@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list 페이지입니다.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <a href="/todo/create/">
+        <button>새로 만들기</button>
+    </a>
+    <ul class="list-group">
+        {% for todo in todos %}
+        <a href="/todo/{{ todo.id }}">
+            <li class="list-group-item">
+                {{ todo.content }}
+            </li>
+            {% endfor %}
+        </a>
+    </ul>
+</body>
+</html>

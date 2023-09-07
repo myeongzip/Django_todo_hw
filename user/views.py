@@ -10,7 +10,7 @@ def user_signup(request):
         username = request.POST["username"]
         password = request.POST["password"]
         User.objects.create_user(username=username, password=password)
-        return redirect("/todo/")
+        return redirect("/todo/index")
     elif request.method == "GET":
         return render(request, "user/signup.html")
     else:

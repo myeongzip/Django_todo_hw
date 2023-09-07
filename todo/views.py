@@ -9,7 +9,15 @@ from todo.models import Todo
 # Create your views here.
 
 def todo_index(request):
-    pass
+    if request.method == "GET":
+        todos = Todo.objects.all()
+        print(todos)
+        context = {
+            "todos":todos,   
+        }
+        return render(request, "todo/index.html", context)
+    else:
+        return HttpResponse("Invalid request method", status=405)
 
 
 @csrf_exempt
@@ -28,8 +36,13 @@ def todo_create(request):
         return HttpResponse("Invalid request method", status=405)
 
 
-def todo_read(request):
-    pass
+def todo_read(request, todo_id):
+    todo = Todo.objects.get(id=todo_id)
+    context = {
+        "todo": todo,   
+    }
+    return render(request, "todo/detail.html", context)
+
     
 def todo_update(request):
     pass
