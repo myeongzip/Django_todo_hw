@@ -9,8 +9,8 @@ from user.models import User
 class Todo(models.Model):
     content = models.CharField(max_length=100)
     user = models.ForeignKey("user.User", on_delete = models.CASCADE)
-    created_at = models.DateTimeField(auto_now=False, auto_now_add=False)
-    updated_at = models.DateTimeField(auto_now=False, auto_now_add=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
     is_done = models.BooleanField()
     image = models.ImageField(upload_to='images/')
     
