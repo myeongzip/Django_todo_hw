@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo 작성하기 페이지</title>
+</head>
+<body>
+    <div>
+        <form action="/todo/create/" method="post">
+        {% csrf_token %}
+            <input type="text" name="content" id="content" />
+            <input type="file" name="image" id="image" />
+            <input type="checkbox" name="is_done" id="is_done">
+            <button type="submit">Todo 등록</button>
+        </form>
+    </div>
+</body>
+</html>
